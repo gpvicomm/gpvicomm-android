@@ -1,0 +1,2 @@
+include ':app', ':payment'
+rootProject.name='HSBC Global Payments Demo'
