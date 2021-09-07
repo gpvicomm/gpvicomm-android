@@ -8,19 +8,18 @@ public class Constants {
     public static String USER_ID = "uid12345";
 
     //Email of the user initiating the purchase.
-    public static String USER_EMAIL = "dev@afirme.com";
+    public static String USER_EMAIL = "dev@gpvicomm.com";
 
     //Is Afirme SDK DEV environment?
     public static boolean IS_TEST_MODE = false;
 
     //Ask the Afirme team for it
-    public static String CLIENT_APP_CODE = "LORO-CO-CLIENT-PROD";
+    public static String CLIENT_APP_CODE = "CO-CLIENT";
 
     //Ask the Afirme team for it.
-    public static String CLIENT_APP_KEY = "WuaX26bR13Nuiyf06AB9GV1fJiSuMf";
+    public static String CLIENT_APP_KEY = "xIeNoaDNrNfekSaEs4wcPnPTEBJt7g";
 
-    //Backend Deployed from https://github.com/afirme-shieldgate/example-java-backend
-    public static String BACKEND_URL = "https://example-afirme-backend-v2.herokuapp.com/";
+    public static String BACKEND_URL = "https://gpvicomm-backend-v2.herokuapp.com/";
 
 
 }
