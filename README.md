@@ -1,4 +1,4 @@
-# HSBC Global Payments Android SDK
+# GpVicomm Android SDK
 
 HSBC Global Payments Android SDK is a library that allows developers to easily connect to the HSBC
 CREDITCARDS API
