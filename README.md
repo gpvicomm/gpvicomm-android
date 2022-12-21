@@ -1,6 +1,6 @@
 # GpVicomm Android SDK
 
-HSBC Global Payments Android SDK is a library that allows developers to easily connect to the HSBC
+GpVicomm Global Payments Android SDK is a library that allows developers to easily connect to the GpVicomm
 CREDITCARDS API
 
 ## Installation
@@ -22,7 +22,7 @@ Add this line to your app's `build.gradle` inside the `dependencies` section:
 
 ### ProGuard
 
-If you're planning on optimizing your app with ProGuard, make sure that you exclude the HSBC
+If you're planning on optimizing your app with ProGuard, make sure that you exclude the GpVicomm
 bindings. You can do this by adding the following to your app's `proguard.cfg` file:
 
     -keep class com.gpvicomm.payment.** { *; }
@@ -97,8 +97,8 @@ public class MainActivity extends ActionBarActivity {
          * Init library
          *
          * @param test_mode false to use production environment
-         * @param client_app_code provided by HSBC.
-         * @param client_app_key provided by HSBC.
+         * @param client_app_code provided by GpVicomm.
+         * @param client_app_key provided by GpVicomm.
          */
         Payment.setEnvironment(Constants.IS_TEST_MODE, Constants.CLIENT_APP_CODE, Constants.CLIENT_APP_KEY);
 
@@ -183,7 +183,7 @@ The fourth argument to addCard is a Card object. A Card contains the following f
 + cvc: card security code as a string, e.g. '123'.
 + type:
 
-The fifth argument tokenCallback is a callback you provide to handle responses from HSBC. It
+The fifth argument tokenCallback is a callback you provide to handle responses from GpVicomm. It
 should send the token to your server for processing onSuccess, and notify the user onError.
 
 Here's a sample implementation of the token callback:
@@ -206,11 +206,11 @@ public void onError(PaymentError error){
 ```
 
 `addCard` is an asynchronous call – it returns immediately and invokes the callback on the UI thread
-when it receives a response from HSBC's servers.
+when it receives a response from GpVicomm's servers.
 
 ### getSessionId
 
-The Session ID is a parameter HSBC use for fraud purposes. Call this method if you want to Collect
+The Session ID is a parameter GpVicomm use for fraud purposes. Call this method if you want to Collect
 your user's Device Information.
 
 ```java
@@ -221,7 +221,7 @@ Once you have the Session ID, you can pass it to your server to charge the user.
 
 ### Client-side validation helpers
 
-The Card object allows you to validate user input before you send the information to HSBC.
+The Card object allows you to validate user input before you send the information to GpVicomm.
 
 #### validateNumber
 
@@ -245,29 +245,28 @@ Convenience method to validate card number, expiry date and CVC.
 Note: the app require an [Android SDK](https://developer.android.com/studio/index.html)
 and [Gradle](https://gradle.org/) to build and run.
 
-### Building and Running the HSBCStore
+### Building and Running the GpVicommStore
 
-Before you can run the HSBCStore application, you need to provide it with your HSBC Credentials
+Before you can run the GpVicommStore application, you need to provide it with your GpVicomm Credentials
 and a Sample Backend.
 
-1. If you don't have any Credentials yet, please ask your contact on HSBC Team for it.
+1. If you don't have any Credentials yet, please ask your contact on GpVicomm Team for it.
 2. Head to https://github.com/gpvicomm/example-java-backend and click "Deploy to Heroku" (
-   you may have to sign up for a Heroku account as part of this process). Provide your HSBC Server
+   you may have to sign up for a Heroku account as part of this process). Provide your GpVicomm Server
    Credentials `SERVER_APP_CODE` and  `SERVER_APP_KEY` fields under 'Env'. Click "Deploy for Free".
 3. Open the project on Android Studio.
-4. Replace the `CLIENT_APP_CODE` and `CLIENT_APP_KEY` constants in Constants.java with your own
-   HSBC Client Credentials.
+4. Replace the `CLIENT_APP_CODE` and `CLIENT_APP_KEY` constants in Constants.java with your own GpVicomm Client Credentials.
 5. Replace the `BACKEND_URL` variable in the Constants.java file with the app URL Heroku provides
    you with (e.g. "https://my-example-app.herokuapp.com")
 6. Run the Project.
 
 Important Note: if you only have one APP_CODE, please asume that it's your `SERVER_APP_CODE`. So you
-need to ask your contact on HSBC Team for your `CLIENT_APP_CODE`.
+need to ask your contact on GpVicomm Team for your `CLIENT_APP_CODE`.
 
 ===================
 
-El SDK Android de pagos HSBC Global Payments es una biblioteca que permite a los desarrolladores conectarse
-fácilmente al API de tarjetas de Crédito de HSBC.
+El SDK Android de pagos GpVicomm Global Payments es una biblioteca que permite a los desarrolladores conectarse
+fácilmente al API de tarjetas de Crédito de GpVicomm.
 
 ## Instalación
 
@@ -284,12 +283,11 @@ Add it in your root build.gradle at the end of repositories:
 
 Add this line to your app's `build.gradle` inside the `dependencies` section:
 
-    implementation 'com.github.HSBC-shieldgate:HSBC-shieldgate-android:1.2.9'
+    implementation 'com.github.gpvicomm:gpvicomm-android:1.2.9'
 
 ### ProGuard
 
-Si usted está planeando optimiar su aplicación con ProGuard, asegúrese de excluir los enlaces de
-HSBC. Usted puede realizarlo añadiendo lo siguiente al archivo `proguard.cfg`  de su app:
+Si usted está planeando optimiar su aplicación con ProGuard, asegúrese de excluir los enlaces de gpvicomm. Usted puede realizarlo añadiendo lo siguiente al archivo `proguard.cfg`  de su app:
 
      -keep class com.gpvicomm.payment.** { *; }
 
@@ -363,8 +361,8 @@ public class MainActivity extends ActionBarActivity {
          * Init library
          *
          * @param test_mode false to use production environment
-         * @param client_app_code provided by HSBC.
-         * @param client_app_key provided by HSBC.
+         * @param client_app_code provided by gpvicomm.
+         * @param client_app_key provided by gpvicomm.
          */
         Payment.setEnvironment(Constants.IS_TEST_MODE, Constants.CLIENT_APP_CODE, Constants.CLIENT_APP_KEY);
 
@@ -451,9 +449,9 @@ campos:
 + type: el tipo de tarjeta.
 
 El quinto argumento tokenCallBack es un callback que usted provee para manejar las respuestas
-recibidas de HSBC.
+recibidas de gpvicomm.
 
-The fifth argument tokenCallback is a callback you provide to handle responses from HSBC. Deberá
+The fifth argument tokenCallback is a callback you provide to handle responses from gpvicomm. Deberá
 enviar el token a su servidor para procesar onSuccess y notificar al usuario onError.
 
 Aquí se muestra un ejemplo de implementación de callback del token:
@@ -476,11 +474,11 @@ public void onError(PaymentError error){
 ```
 
 `addCard` es una llamada asíncrona - regresa inmediatamente e invoca el callback en el hilo de la
-interfaz, cuando recibe una respuesta de los servidores de HSBC.
+interfaz, cuando recibe una respuesta de los servidores de gpvicomm.
 
 ### getSessionId
 
-El Session ID es un parámetro que HSBC utiliza para fines de antifraude. Llave esté método cuando
+El Session ID es un parámetro que gpvicomm utiliza para fines de antifraude. Llave esté método cuando
 quiera recabar la información del dispositivo.
 
 ```java
@@ -492,7 +490,7 @@ usuario.
 
 ### Herramientas de validación del lado del Cliente
 
-El objeto Card permite validar la información capturada por el usuario antes de enviarla a HSBC.
+El objeto Card permite validar la información capturada por el usuario antes de enviarla a gpvicomm.
 
 #### validateNumber
 
@@ -519,19 +517,19 @@ y [Gradle](https://gradle.org/) para coinstruir y ejecutar.
 ### Construyendo y Ejecutando la PaymentStore
 
 Antes de que pueda pueda correr la aplicación PaymentStore, ested necesita proveerla con las
-credenciales de HSBC y un backend de muestra.
+credenciales de gpvicomm y un backend de muestra.
 
-1. Si aún no cuenta con credenciales, pídalas a su contancto en el equipo de HSBC.
+1. Si aún no cuenta con credenciales, pídalas a su contancto en el equipo de gpvicomm.
 2. Dirígase a https://github.com/gpvicomm/example-java-backend y haga click en "Deploy to
    Heroku" (es posible que tengas que registrarte para obtener una cuenta de Heroku como parte de
-   este proceso). Proporcione sus credenciales de servidor de HSBC `SERVER_APP_CODE`
+   este proceso). Proporcione sus credenciales de servidor de gpvicomm `SERVER_APP_CODE`
    y `SERVER_APP_KEY`en los campos "Env". Haga click en "Deploy for Free".
 3. Abra el proyecto en Android Studio.
 4. Reemplace las constantes  `CLIENT_APP_CODE` y `CLIENT_APP_KEY` en Constants.java con sus propias
-   credenciales de HSBC.
+   credenciales de gpvicomm.
 5. Reemplace la variable `BACKEND_URL` en el archivo Constants.java con la URL de la aplicación que
    Heroku le proporciona (por ejemplo," https://my-example-app.herokuapp.com ")
 6. Ejecute el proyecto.
 
 Nota importante: si solo tiene un APP_CODE, suponga que es su `SERVER_APP_CODE`. Por lo tanto, debe
-solicitar a su contacto en el equipo de HSBC su `CLIENT_APP_CODE`.
+solicitar a su contacto en el equipo de gpvicomm su `CLIENT_APP_CODE`.
