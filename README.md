@@ -31,7 +31,7 @@ bindings. You can do this by adding the following to your app's `proguard.cfg` f
 
 ### Using the CardMultilineWidget
 
-![global_pay1](img/global_pay1.jpg)
+![global_pay1](https://raw.githubusercontent.com/gpvicomm/gpvicomm-android/main/img/global_pay1.jpg)
 
 
 You can add a widget to your apps that easily handles the UI states for collecting card data.
