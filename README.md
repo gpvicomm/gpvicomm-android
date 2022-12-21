@@ -31,7 +31,7 @@ bindings. You can do this by adding the following to your app's `proguard.cfg` f
 
 ### Using the CardMultilineWidget
 
-![global_pay1](https://user-images.githubusercontent.com/87390960/132404557-8f1be075-4664-4ce3-8f6a-04dbfe67f028.jpg)
+![global_pay1](img/global_pay1.jpg)
 
 
 You can add a widget to your apps that easily handles the UI states for collecting card data.
